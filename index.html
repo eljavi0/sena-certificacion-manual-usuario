@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual de Usuario — SENA Certificación App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BOTÓN MÓVIL -->
+<button id="menu-toggle" onclick="toggleSidebar()" title="Menú" aria-label="Abrir menú">
+  <svg style="width:22px;height:22px;fill:white" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+</button>
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- ══════════════════════════════════════
+     BARRA LATERAL DE NAVEGACIÓN
+══════════════════════════════════════ -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <h1>SENA Certificación</h1>
+    <p>Manual de Usuario</p>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Inicio</div>
+    <a class="nav-link active" onclick="show('portada')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span> Portada
+    </a>
+    <a class="nav-link" onclick="show('toc')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></span> Tabla de contenidos
+    </a>
+    <a class="nav-link" onclick="show('ilustraciones')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></span> Tabla de ilustraciones
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Primeros pasos</div>
+    <a class="nav-link" onclick="show('intro')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4zm0 16V14h12v6H6zm12-8h-5V4h5v8z"/></svg></span> Introducción
+    </a>
+    <a class="nav-link" onclick="show('recomendaciones')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></span> Recomendaciones
+    </a>
+    <a class="nav-link" onclick="show('objetivos')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></span> Objetivos del manual
+    </a>
+    <a class="nav-link" onclick="show('dirigido')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span> ¿A quién va dirigido?
+    </a>
+    <a class="nav-link" onclick="show('conocer')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span> Lo que debo conocer
+    </a>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Funcionalidades</div>
+    <a class="nav-link" onclick="show('f1')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg></span> F1 · Interfaz y navegación
+    </a>
+    <a class="nav-link" onclick="show('f2')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/><path d="M19 13h-6v6h6v-6zm0-10h-6v6h6V3zM5 3h6v6H5V3zm0 10h6v6H5v-6z" opacity=".0"/><path d="M5 20h14v-2H5v2zM5 4v2h14V4H5z"/></svg></span> F2 · Cargar información
+    </a>
+    <a class="nav-link" onclick="show('f3')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span> F3 · Vista previa y confirmación
+    </a>
+    <a class="nav-link" onclick="show('f4')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-8h2v6h-2V9z"/></svg></span> F4 · Resolución de conflictos
+    </a>
+    <a class="nav-link" onclick="show('f5')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg></span> F5 · Google Sheets
+    </a>
+    <a class="nav-link" onclick="show('f6')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span> F6 · Consultar aprendices
+    </a>
+    <a class="nav-link" onclick="show('f7')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span> F7 · Detalle del aprendiz
+    </a>
+    <a class="nav-link" onclick="show('f8')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span> F8 · Gestión de actas
+    </a>
+    <a class="nav-link" onclick="show('f9')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></span> F9 · Indicadores
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     CONTENIDO PRINCIPAL
+══════════════════════════════════════ -->
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════ -->
+  <section id="sec-portada" class="section active">
+    <div class="cover-badge">Manual de Usuario · Versión 1.0</div>
+    <div class="cover-line"></div>
+    <h1 class="cover-title">SENA Certificación<br><span>App</span></h1>
+    <p class="cover-sub">Guía práctica para cargar, validar, consolidar y consultar la información del proceso de certificación de aprendices.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Versión</label>
+        <span>1.0</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Año</label>
+        <span>2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>Clasificación</label>
+        <span>Uso interno · Administración Educativa</span>
+      </div>
+    </div>
+
+    <p class="cover-toc-label">Ir directamente a una sección</p>
+    <div class="cover-toc-grid">
+      <button class="cover-toc-btn" onclick="show('intro')"><span class="ctn">01</span> Introducción</button>
+      <button class="cover-toc-btn" onclick="show('recomendaciones')"><span class="ctn">02</span> Recomendaciones</button>
+      <button class="cover-toc-btn" onclick="show('dirigido')"><span class="ctn">03</span> ¿A quién va dirigido?</button>
+      <button class="cover-toc-btn" onclick="show('conocer')"><span class="ctn">04</span> Lo que debo conocer</button>
+      <button class="cover-toc-btn" onclick="show('f1')"><span class="ctn">F1</span> Interfaz y navegación</button>
+      <button class="cover-toc-btn" onclick="show('f2')"><span class="ctn">F2</span> Cargar información</button>
+      <button class="cover-toc-btn" onclick="show('f3')"><span class="ctn">F3</span> Vista previa y confirmación</button>
+      <button class="cover-toc-btn" onclick="show('f4')"><span class="ctn">F4</span> Resolución de conflictos</button>
+      <button class="cover-toc-btn" onclick="show('f5')"><span class="ctn">F5</span> Google Sheets</button>
+      <button class="cover-toc-btn" onclick="show('f6')"><span class="ctn">F6</span> Consultar aprendices</button>
+      <button class="cover-toc-btn" onclick="show('f7')"><span class="ctn">F7</span> Detalle del aprendiz</button>
+      <button class="cover-toc-btn" onclick="show('f8')"><span class="ctn">F8</span> Gestión de actas</button>
+      <button class="cover-toc-btn" onclick="show('f9')"><span class="ctn">F9</span> Indicadores</button>
+    </div>
+  </section>
+
+  <!-- ══════════ TABLA DE CONTENIDOS ══════════ -->
+  <section id="sec-toc" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Navegación</p>
+      <h2>Tabla de contenidos</h2>
+      <p>Índice completo de las secciones del manual.</p>
+    </div>
+    <table class="toc-table">
+      <thead>
+        <tr><th style="width:12%">Código</th><th>Sección</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td><a onclick="show('intro')">Introducción</a></td></tr>
+        <tr><td>02</td><td><a onclick="show('recomendaciones')">Recomendaciones de uso</a></td></tr>
+        <tr><td>03</td><td><a onclick="show('objetivos')">Objetivos del manual</a></td></tr>
+        <tr><td>04</td><td><a onclick="show('dirigido')">¿A quién va dirigido?</a></td></tr>
+        <tr><td>05</td><td><a onclick="show('conocer')">Lo que debo conocer</a></td></tr>
+        <tr><td>F1</td><td><a onclick="show('f1')">Interfaz principal y navegación</a></td></tr>
+        <tr><td>F2</td><td><a onclick="show('f2')">Cargar información (archivos locales)</a></td></tr>
+        <tr><td>F3</td><td><a onclick="show('f3')">Vista previa y confirmación de importación</a></td></tr>
+        <tr><td>F4</td><td><a onclick="show('f4')">Resolución de conflictos CERTIFICADOS / PENDIENTES</a></td></tr>
+        <tr><td>F5</td><td><a onclick="show('f5')">Sincronización con Google Sheets</a></td></tr>
+        <tr><td>F6</td><td><a onclick="show('f6')">Consultar y filtrar aprendices</a></td></tr>
+        <tr><td>F7</td><td><a onclick="show('f7')">Detalle del aprendiz y requisitos</a></td></tr>
+        <tr><td>F8</td><td><a onclick="show('f8')">Gestión de actas</a></td></tr>
+        <tr><td>F9</td><td><a onclick="show('f9')">Indicadores de certificación</a></td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-info">
+      <strong>Nota sobre el Informe de gestión</strong>
+      La funcionalidad de generación del Informe de gestión administrativa se documentará en una versión posterior de este manual, una vez esté completada y validada.
+    </div>
+  </section>
+
+  <!-- ══════════ TABLA DE ILUSTRACIONES ══════════ -->
+  <section id="sec-ilustraciones" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Referencia visual</p>
+      <h2>Tabla de ilustraciones</h2>
+      <p>Lista ordenada de las capturas de pantalla que debe tomar y colocar en la carpeta <code>img/</code>.</p>
+    </div>
+    <table class="illust-table">
+      <thead>
+        <tr><th style="width:18%">Archivo</th><th>Descripción / qué capturar</th><th style="width:22%">Sección</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>img/captura01.png</code></td><td>Barra lateral (rail) de navegación completa, con las opciones visibles</td><td>F1</td></tr>
+        <tr><td><code>img/captura02.png</code></td><td>Vista principal «Cargar información» (pantalla inicial vacía o lista para importar)</td><td>F2</td></tr>
+        <tr><td><code>img/captura03.png</code></td><td>Selección de tipo de fuente / zona de carga de archivo (DF14A, Acta, Requisitos, ACTAS 2026…)</td><td>F2</td></tr>
+        <tr><td><code>img/captura04.png</code></td><td>Vista previa de importación (resumen de registros, advertencias y botones Confirmar / Cancelar)</td><td>F3</td></tr>
+        <tr><td><code>img/captura05.png</code></td><td>Banner o mensaje de importación completada con éxito</td><td>F3</td></tr>
+        <tr><td><code>img/captura06.png</code></td><td>Vista previa mostrando conflictos o advertencias de coherencia</td><td>F3 / F4</td></tr>
+        <tr><td><code>img/captura07.png</code></td><td>Panel o modal de resolución de conflictos (CERTIFICADOS vs PENDIENTES)</td><td>F4</td></tr>
+        <tr><td><code>img/captura08.png</code></td><td>Botón y panel de Google Sheets (campo de URL y botón Sincronizar)</td><td>F5</td></tr>
+        <tr><td><code>img/captura09.png</code></td><td>Estado de sincronización de Google Sheets (éxito, sin cambios o conflicto pendiente)</td><td>F5</td></tr>
+        <tr><td><code>img/captura10.png</code></td><td>Listado de aprendices (tabla con columnas y paginación)</td><td>F6</td></tr>
+        <tr><td><code>img/captura11.png</code></td><td>Filtros activos: buscador, selector de estado y chips de estado</td><td>F6</td></tr>
+        <tr><td><code>img/captura12.png</code></td><td>Ficha / detalle de un aprendiz (datos básicos)</td><td>F7</td></tr>
+        <tr><td><code>img/captura13.png</code></td><td>Sección de requisitos del aprendiz (pendientes o historial)</td><td>F7</td></tr>
+        <tr><td><code>img/captura14.png</code></td><td>Listado de actas</td><td>F8</td></tr>
+        <tr><td><code>img/captura15.png</code></td><td>Detalle de un acta con aprendices asociados</td><td>F8</td></tr>
+        <tr><td><code>img/captura16.png</code></td><td>Vista de indicadores (resumen de avance / métricas principales)</td><td>F9</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-warning">
+      <strong>Cómo completar las capturas</strong>
+      1. Cree la carpeta <code>img/</code> junto a este <code>index.html</code>.<br>
+      2. Tome las capturas de la aplicación en el orden indicado.<br>
+      3. Guárdelas exactamente con los nombres <code>captura01.png</code> … <code>captura16.png</code> (PNG recomendado).<br>
+      4. Al abrir el manual en el navegador, las imágenes aparecerán automáticamente en su lugar.
+    </div>
+  </section>
+
+  <!-- ══════════ INTRODUCCIÓN ══════════ -->
+  <section id="sec-intro" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Primeros pasos</p>
+      <h2>Introducción</h2>
+    </div>
+    <p>
+      <strong>SENA Certificación App</strong> es una aplicación web de uso local diseñada para centralizar
+      el seguimiento administrativo del proceso de certificación de aprendices. Permite cargar archivos
+      oficiales (actas, DF14A, libros de seguimiento tipo ACTAS 2026 y matrices de requisitos), validarlos,
+      consolidar la información de cada aprendiz y consultar indicadores de avance.
+    </p>
+    <p>
+      Antes de esta herramienta, la información se encontraba dispersa en múltiples archivos con formatos
+      distintos. Eso generaba duplicados, omisiones, revisiones manuales lentas y poca trazabilidad.
+      La aplicación unifica ese flujo en un solo lugar: cargar → validar → confirmar → consultar → reportar.
+    </p>
+    <div class="callout callout-info">
+      <strong>Importante</strong>
+      La aplicación se ejecuta de forma local (en su equipo o en un entorno controlado). No sustituye
+      a SOFIA Plus ni modifica Google Sheets: solo lee y consolida la información que usted importa.
+    </div>
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('portada')">← Portada</button>
+      <button class="nav-btn primary" onclick="show('recomendaciones')">Recomendaciones →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ RECOMENDACIONES ══════════ -->
+  <section id="sec-recomendaciones" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Primeros pasos</p>
+      <h2>Recomendaciones de uso</h2>
+    </div>
+    <ul>
+      <li>Trabaje siempre con <strong>archivos actualizados</strong> exportados desde las fuentes oficiales (SOFIA Plus, actas firmadas, consolidado ACTAS 2026).</li>
+      <li>Revise la <strong>vista previa</strong> antes de confirmar cualquier importación. Es el momento de detectar duplicados, conflictos o datos incompletos.</li>
+      <li>Resuelva los <strong>conflictos CERTIFICADOS / PENDIENTES</strong> de forma consciente: la decisión afecta los indicadores y el estado del aprendiz.</li>
+      <li>Si usa sincronización con Google Sheets, configure la hoja como «Cualquier persona con el enlace → Lector» y no espere que la aplicación corrija filas en la hoja (solo lee).</li>
+      <li>Conserve copias de seguridad de los archivos fuente y, si es necesario, de la base de datos local generada por la aplicación.</li>
+      <li>Use un navegador actualizado (Chrome, Edge o Firefox) y una resolución de pantalla cómoda para trabajar con tablas y filtros.</li>
+    </ul>
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('intro')">← Introducción</button>
+      <button class="nav-btn primary" onclick="show('objetivos')">Objetivos →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ OBJETIVOS ══════════ -->
+  <section id="sec-objetivos" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Primeros pasos</p>
+      <h2>Objetivos del manual</h2>
+    </div>
+    <p>Al finalizar la lectura de este manual usted podrá:</p>
+    <ul>
+      <li>Identificar las secciones principales de la interfaz y moverse entre ellas con seguridad.</li>
+      <li>Cargar y validar archivos de las fuentes admitidas (DF14A, actas, requisitos, ACTAS 2026).</li>
+      <li>Interpretar la vista previa de importación y confirmar o cancelar de forma controlada.</li>
+      <li>Resolver conflictos cuando un aprendiz aparece a la vez en CERTIFICADOS y PENDIENTES.</li>
+      <li>Configurar y usar la sincronización con Google Sheets.</li>
+      <li>Consultar, filtrar y revisar el detalle de aprendices y sus requisitos.</li>
+      <li>Registrar y consultar actas, y asociar aprendices de forma fiable.</li>
+      <li>Consultar los indicadores de avance de certificación.</li>
+    </ul>
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('recomendaciones')">← Recomendaciones</button>
+      <button class="nav-btn primary" onclick="show('dirigido')">¿A quién va dirigido? →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ DIRIGIDO ══════════ -->
+  <section id="sec-dirigido" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Primeros pasos</p>
+      <h2>¿A quién va dirigido?</h2>
+    </div>
+    <p>Este manual está orientado a:</p>
+    <div class="req-grid">
+      <div class="req-card">
+        <h4>Personal de Administración Educativa</h4>
+        <p>Quienes consolidan actas, pendientes y certificados y elaboran el seguimiento del período.</p>
+      </div>
+      <div class="req-card">
+        <h4>Coordinación académica</h4>
+        <p>Quienes revisan listados de aprendices «Por certificar» y la relación con actas oficiales.</p>
+      </div>
+      <div class="req-card">
+        <h4>Instructores de seguimiento</h4>
+        <p>Quienes consultan el estado de requisitos y evidencias de sus aprendices (según el alcance de uso).</p>
+      </div>
+      <div class="req-card">
+        <h4>Soporte / desarrollo</h4>
+        <p>Quienes instalan, actualizan o acompañan el uso de la aplicación en el centro.</p>
+      </div>
+    </div>
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('objetivos')">← Objetivos</button>
+      <button class="nav-btn primary" onclick="show('conocer')">Lo que debo conocer →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ LO QUE DEBO CONOCER ══════════ -->
+  <section id="sec-conocer" class="section">
+    <div class="page-header">
+      <p class="eyebrow">Primeros pasos</p>
+      <h2>Lo que debo conocer</h2>
+      <p>Conceptos y requisitos mínimos antes de usar la aplicación.</p>
+    </div>
+
+    <h3>Conceptos clave del proceso</h3>
+    <ul>
+      <li><strong>DF14A:</strong> archivo estructurado exportado desde SOFIA Plus con el resumen de matriculados por ficha y estados (Por certificar, Certificado, etc.).</li>
+      <li><strong>Acta de certificación:</strong> documento oficial (PDF o DOCX) con el listado de aprendices que cumplen requisitos para iniciar el trámite.</li>
+      <li><strong>ACTAS 2026 (o libro de seguimiento):</strong> Excel institucional con hojas CERTIFICADOS, PENDIENTES, COMPLEMENTARIA y META.</li>
+      <li><strong>Por certificar:</strong> estado del aprendiz que ya puede iniciar el trámite de certificación (no implica que el certificado ya esté expedido).</li>
+      <li><strong>Conflicto CERTIFICADOS / PENDIENTES:</strong> un mismo documento aparece en ambas hojas; debe resolverse de forma explícita.</li>
+    </ul>
+
+    <h3>Requisitos técnicos</h3>
+    <div class="req-grid">
+      <div class="req-card">
+        <h4>Navegador</h4>
+        <p>Chrome, Edge o Firefox actualizado. La interfaz se abre en <code>http://127.0.0.1:8000</code> (o el puerto que indique el lanzador).</p>
+      </div>
+      <div class="req-card">
+        <h4>Archivos de entrada</h4>
+        <p>Formatos admitidos: XLSX, XLS, CSV, XML, PDF y DOCX, según el tipo de información seleccionado.</p>
+      </div>
+      <div class="req-card">
+        <h4>Google Sheets (opcional)</h4>
+        <p>Hoja compartida como «Cualquier persona con el enlace → Lector» para poder descargar el XLSX público.</p>
+      </div>
+      <div class="req-card">
+        <h4>Entorno de ejecución</h4>
+        <p>Aplicación local (Python/FastAPI o ejecutable de demo). No requiere servidor en la nube.</p>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('dirigido')">← ¿A quién va dirigido?</button>
+      <button class="nav-btn primary" onclick="show('f1')">F1 · Interfaz →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F1 · INTERFAZ ══════════ -->
+  <section id="sec-f1" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F1</span>
+      <h2>Interfaz principal y navegación</h2>
+      <p>Conozca las secciones de la aplicación y cómo moverse entre ellas.</p>
+    </div>
+
+    <p>
+      Al abrir la aplicación verá una <strong>barra lateral estrecha (rail)</strong> a la izquierda con iconos
+      y etiquetas. Cada opción lleva a una vista distinta del sistema.
+    </p>
+
+    <!-- captura01 -->
+    <div class="figure">
+      <img src="img/captura01.png" alt="Barra lateral de navegación de SENA Certificación App"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura01.png</code>
+        <span>Barra lateral (rail) de navegación con todas las opciones visibles</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 1.</strong> Barra lateral de navegación (rail).</div>
+    </div>
+
+    <h3>Secciones principales</h3>
+    <ul>
+      <li><strong>Cargar información:</strong> importación de archivos y sincronización con Google Sheets.</li>
+      <li><strong>Aprendices:</strong> listado, búsqueda, filtros y ficha de detalle.</li>
+      <li><strong>Actas:</strong> registro, consulta y vinculación de aprendices a actas oficiales.</li>
+      <li><strong>Indicadores:</strong> avance de certificación, métricas por período y desgloses.</li>
+      <li><strong>Informe de gestión:</strong> (se documentará en una versión posterior de este manual).</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Consejo</strong>
+      La opción activa del menú se resalta en la barra lateral. Puede cambiar de sección en cualquier momento
+      sin perder el trabajo ya confirmado (los datos quedan guardados en la base local).
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('conocer')">← Lo que debo conocer</button>
+      <button class="nav-btn primary" onclick="show('f2')">F2 · Cargar información →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F2 · CARGAR INFORMACIÓN ══════════ -->
+  <section id="sec-f2" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F2</span>
+      <h2>Cargar información (archivos locales)</h2>
+      <p>Cómo importar DF14A, actas, requisitos y el consolidado ACTAS 2026.</p>
+    </div>
+
+    <p>
+      Desde la vista <strong>Cargar información</strong> puede seleccionar el tipo de fuente e indicar el archivo
+      a procesar. La aplicación valida la estructura y el contenido <em>antes</em> de modificar la base de datos.
+    </p>
+
+    <!-- captura02 -->
+    <div class="figure">
+      <img src="img/captura02.png" alt="Vista principal Cargar información"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura02.png</code>
+        <span>Vista principal «Cargar información»</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 2.</strong> Pantalla inicial de carga de información.</div>
+    </div>
+
+    <h3>Fuentes admitidas</h3>
+    <ul>
+      <li><strong>DF14A</strong> — listado base de aprendices desde SOFIA Plus.</li>
+      <li><strong>Acta de certificación</strong> — PDF o DOCX oficiales.</li>
+      <li><strong>Requisitos / pendientes</strong> — matrices de requisitos o listados de pendientes.</li>
+      <li><strong>ACTAS 2026 / seguimiento</strong> — libro Excel con hojas CERTIFICADOS, PENDIENTES, COMPLEMENTARIA y META.</li>
+      <li><strong>Otro archivo</strong> — para casos que no encajan en las categorías anteriores (según reglas de validación).</li>
+    </ul>
+
+    <!-- captura03 -->
+    <div class="figure">
+      <img src="img/captura03.png" alt="Selección de tipo de fuente y zona de carga del archivo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura03.png</code>
+        <span>Selección de tipo de fuente y zona de carga del archivo</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 3.</strong> Selección del tipo de información y carga del archivo.</div>
+    </div>
+
+    <h4>Pasos para cargar un archivo</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Entre a la vista <strong>Cargar información</strong> desde la barra lateral.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Seleccione el <strong>tipo de información</strong> que corresponde al archivo (DF14A, Acta, Requisitos, ACTAS 2026, etc.).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Elija el archivo desde su equipo (o arrástrelo a la zona de carga, si la interfaz lo permite).</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Espere a que la aplicación valide el archivo. Si hay errores de estructura, se mostrarán mensajes claros y no se guardará nada.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Si la validación es correcta, pasará a la <strong>vista previa</strong> (ver F3). Revísela y confirme solo cuando esté de acuerdo.</div></div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Antes de confirmar</strong>
+      La validación no modifica la base de datos. Solo la confirmación de la vista previa escribe o actualiza registros.
+      Puede cancelar en cualquier momento sin efectos.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f1')">← F1 · Interfaz</button>
+      <button class="nav-btn primary" onclick="show('f3')">F3 · Vista previa →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F3 · VISTA PREVIA ══════════ -->
+  <section id="sec-f3" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F3</span>
+      <h2>Vista previa y confirmación de importación</h2>
+      <p>Revise qué se importará, las advertencias detectadas y confirme o cancele.</p>
+    </div>
+
+    <p>
+      Después de una validación exitosa, el sistema muestra una <strong>vista previa</strong> con el resumen
+      de registros nuevos o actualizados, advertencias (por ejemplo duplicados) y, si aplica, conflictos
+      de coherencia entre CERTIFICADOS y PENDIENTES.
+    </p>
+
+    <!-- captura04 -->
+    <div class="figure">
+      <img src="img/captura04.png" alt="Vista previa de importación"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura04.png</code>
+        <span>Vista previa de importación con resumen y botones Confirmar / Cancelar</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 4.</strong> Vista previa de importación.</div>
+    </div>
+
+    <h4>Qué revisar en la vista previa</h4>
+    <ul>
+      <li>Cantidad de registros nuevos y actualizados.</li>
+      <li>Advertencias (filas duplicadas, datos incompletos, niveles no clasificados, etc.).</li>
+      <li>Conflictos de estado (mismo documento en CERTIFICADOS y PENDIENTES).</li>
+      <li>Ausencia de hojas esperadas (por ejemplo COMPLEMENTARIA), cuando el archivo es un consolidado.</li>
+    </ul>
+
+    <!-- captura05 -->
+    <div class="figure">
+      <img src="img/captura05.png" alt="Mensaje de importación completada con éxito"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura05.png</code>
+        <span>Mensaje o banner de importación completada con éxito</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 5.</strong> Confirmación de importación exitosa.</div>
+    </div>
+
+    <!-- captura06 -->
+    <div class="figure">
+      <img src="img/captura06.png" alt="Vista previa con conflictos o advertencias"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura06.png</code>
+        <span>Vista previa con conflictos o advertencias de coherencia visibles</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 6.</strong> Ejemplo de advertencias o conflictos en la vista previa.</div>
+    </div>
+
+    <div class="callout callout-success">
+      <strong>Después de confirmar</strong>
+      La operación queda registrada en el historial de importaciones. Puede consultar aprendices, actas
+      e indicadores con los datos ya consolidados. Si necesita volver a cargar el mismo archivo con
+      correcciones, puede reimportarlo: el sistema actualizará sin crear duplicados de aprendices.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f2')">← F2 · Cargar información</button>
+      <button class="nav-btn primary" onclick="show('f4')">F4 · Conflictos →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F4 · CONFLICTOS ══════════ -->
+  <section id="sec-f4" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F4</span>
+      <h2>Resolución de conflictos CERTIFICADOS / PENDIENTES</h2>
+      <p>Cómo actuar cuando un mismo aprendiz aparece en ambas hojas del consolidado.</p>
+    </div>
+
+    <p>
+      Un <strong>conflicto</strong> ocurre cuando el mismo número de documento está a la vez en la hoja
+      CERTIFICADOS y en la hoja PENDIENTES. El sistema no asume automáticamente cuál es el estado correcto:
+      le pide una decisión explícita (desempate).
+    </p>
+
+    <!-- captura07 -->
+    <div class="figure">
+      <img src="img/captura07.png" alt="Panel de resolución de conflictos"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura07.png</code>
+        <span>Panel o modal de resolución de conflictos</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 7.</strong> Interfaz de resolución de conflictos.</div>
+    </div>
+
+    <h4>Cómo resolver un conflicto</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Identifique el documento en conflicto (nombre y número de identificación).</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Elija el estado que debe prevalecer: <strong>CERTIFICADOS</strong> o <strong>PENDIENTE</strong>, según la información real del proceso.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Confirme la decisión. El sistema guarda el desempate de forma condicional: solo aplica mientras el documento siga apareciendo en ambas hojas.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Si más adelante el documento aparece solo en una hoja, el sistema limpia el desempate y toma el estado de esa hoja.</div></div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Importante</strong>
+      Resolver el conflicto en la aplicación <strong>no modifica Google Sheets ni el archivo Excel</strong>.
+      Solo afecta el estado consolidado dentro de SENA Certificación App. Si la hoja de origen sigue
+      con el duplicado, deberá corregirlo manualmente en la fuente.
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Reaplicación silenciosa</strong>
+      Si un documento vuelve a aparecer en ambas hojas y usted ya había tomado una decisión antes,
+      el sistema puede reaplicar esa última decisión sin volver a bloquear la importación, salvo que
+      usted la cambie.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f3')">← F3 · Vista previa</button>
+      <button class="nav-btn primary" onclick="show('f5')">F5 · Google Sheets →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F5 · GOOGLE SHEETS ══════════ -->
+  <section id="sec-f5" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F5</span>
+      <h2>Sincronización con Google Sheets</h2>
+      <p>Conecte un consolidado compartido para actualizar datos de forma periódica.</p>
+    </div>
+
+    <p>
+      En la vista <strong>Cargar información</strong> puede usar el botón <strong>Google Sheets</strong> para
+      pegar la URL de una hoja compartida públicamente (permiso de lector). La aplicación descarga el XLSX,
+      calcula un hash y, si hubo cambios, prepara la importación con las mismas reglas que un archivo local.
+    </p>
+
+    <!-- captura08 -->
+    <div class="figure">
+      <img src="img/captura08.png" alt="Panel de Google Sheets con URL y botón Sincronizar"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura08.png</code>
+        <span>Panel de Google Sheets: campo de URL y botón Sincronizar</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 8.</strong> Configuración de la URL de Google Sheets.</div>
+    </div>
+
+    <h4>Pasos para sincronizar</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">En Google Sheets, comparta el archivo como «Cualquier persona con el enlace» → <strong>Lector</strong>.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Copie la URL de la hoja y péguela en el panel de Google Sheets de la aplicación.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Pulse <strong>Sincronizar</strong> (o configure la sincronización automática si está disponible).</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Revise la vista previa. Si hay conflictos sin desempate previo, el lote quedará en estado pendiente hasta que los resuelva.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Confirme la importación cuando no haya bloqueos o después de resolver los conflictos.</div></div>
+    </div>
+
+    <!-- captura09 -->
+    <div class="figure">
+      <img src="img/captura09.png" alt="Estado de sincronización de Google Sheets"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura09.png</code>
+        <span>Estado de sincronización (éxito, sin cambios o conflicto pendiente)</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 9.</strong> Ejemplo de estado de sincronización con Google Sheets.</div>
+    </div>
+
+    <div class="callout callout-danger">
+      <strong>La aplicación no escribe en Google Sheets</strong>
+      Solo lee y descarga. Cualquier corrección de filas duplicadas o de datos erróneos debe hacerse
+      manualmente en la hoja. Marcar «ya corregí el duplicado» en la app es solo una nota documental.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f4')">← F4 · Conflictos</button>
+      <button class="nav-btn primary" onclick="show('f6')">F6 · Aprendices →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F6 · APRENDICES ══════════ -->
+  <section id="sec-f6" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F6</span>
+      <h2>Consultar y filtrar aprendices</h2>
+      <p>Listado consolidado, búsqueda y filtros por estado o requisitos.</p>
+    </div>
+
+    <p>
+      La vista <strong>Aprendices</strong> muestra el registro consolidado almacenado en la base local.
+      Cada fila corresponde a un aprendiz identificado de forma única por su número de documento.
+    </p>
+
+    <!-- captura10 -->
+    <div class="figure">
+      <img src="img/captura10.png" alt="Listado de aprendices registrados"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura10.png</code>
+        <span>Tabla de aprendices con columnas y paginación</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 10.</strong> Listado de aprendices registrados.</div>
+    </div>
+
+    <h3>Filtros y búsqueda</h3>
+    <p>Puede combinar:</p>
+    <ul>
+      <li><strong>Buscador:</strong> nombre, documento, programa, ficha o estado.</li>
+      <li><strong>Estado de certificación:</strong> por ejemplo «Por certificar», «Certificado», etc.</li>
+      <li><strong>Requisitos faltantes:</strong> filtrar por tipos de requisito pendientes (cuando esté disponible).</li>
+      <li><strong>Chips de estado:</strong> accesos rápidos para filtrar por los estados más usados.</li>
+    </ul>
+
+    <!-- captura11 -->
+    <div class="figure">
+      <img src="img/captura11.png" alt="Filtros, buscador y chips de estado de aprendices"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura11.png</code>
+        <span>Barra de filtros, buscador y chips de estado</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 11.</strong> Controles de búsqueda y filtrado de aprendices.</div>
+    </div>
+
+    <h4>Pasos para localizar un aprendiz</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Abra la vista <strong>Aprendices</strong>.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Escriba parte del nombre o el documento en el buscador, o elija un estado en el selector / chips.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Use la paginación si el resultado tiene varias páginas.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Haga clic en el nombre del aprendiz (o en «Ver detalles») para abrir la ficha completa (F7).</div></div>
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f5')">← F5 · Google Sheets</button>
+      <button class="nav-btn primary" onclick="show('f7')">F7 · Detalle del aprendiz →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F7 · DETALLE APRENDIZ ══════════ -->
+  <section id="sec-f7" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F7</span>
+      <h2>Detalle del aprendiz y requisitos</h2>
+      <p>Ficha individual: datos básicos, requisitos y seguimiento.</p>
+    </div>
+
+    <p>
+      Desde el listado puede abrir la <strong>ficha de un aprendiz</strong>. Allí verá la información consolidada
+      (identificación, programa, ficha, estado de certificación, instructor, etc.) y la sección de requisitos
+      asociados al proceso de certificación.
+    </p>
+
+    <!-- captura12 -->
+    <div class="figure">
+      <img src="img/captura12.png" alt="Ficha de detalle de un aprendiz"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura12.png</code>
+        <span>Ficha de detalle del aprendiz (datos básicos)</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 12.</strong> Detalle de un aprendiz.</div>
+    </div>
+
+    <!-- captura13 -->
+    <div class="figure">
+      <img src="img/captura13.png" alt="Sección de requisitos del aprendiz"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura13.png</code>
+        <span>Sección de requisitos del aprendiz (pendientes o historial)</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 13.</strong> Requisitos asociados al aprendiz.</div>
+    </div>
+
+    <h3>Qué puede hacer en el detalle</h3>
+    <ul>
+      <li>Consultar datos de identificación, programa, ficha y estado.</li>
+      <li>Ver el motivo de no certificación (si proviene de la hoja PENDIENTES).</li>
+      <li>Revisar requisitos pendientes o registrados (documentación, etapa productiva, paz y salvos, Saber TyT, etc.).</li>
+      <li>En algunos flujos, agregar o actualizar requisitos según los permisos y el diseño de la pantalla.</li>
+      <li>Volver al listado con el botón «Volver» sin perder los filtros aplicados (según la implementación actual).</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Identificación fiable</strong>
+      El sistema consolida por número de documento. La coincidencia solo por nombre no se usa para
+      vincular automáticamente aprendices a actas ni para fusionar registros.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f6')">← F6 · Aprendices</button>
+      <button class="nav-btn primary" onclick="show('f8')">F8 · Actas →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F8 · ACTAS ══════════ -->
+  <section id="sec-f8" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F8</span>
+      <h2>Gestión de actas</h2>
+      <p>Registrar actas oficiales, consultarlas y asociar aprendices.</p>
+    </div>
+
+    <p>
+      Las <strong>actas</strong> son documentos oficiales del proceso. En la aplicación puede registrar el
+      número, la fecha, el tipo y el estado de revisión, y vincular los aprendices que figuran en el acta
+      cuando la identificación es fiable.
+    </p>
+
+    <!-- captura14 -->
+    <div class="figure">
+      <img src="img/captura14.png" alt="Listado de actas registradas"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura14.png</code>
+        <span>Listado de actas registradas</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 14.</strong> Listado de actas.</div>
+    </div>
+
+    <h4>Pasos para registrar o consultar un acta</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Abra la vista <strong>Actas</strong>.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Para crear una nueva: use la opción de registro e indique número, fecha, tipo y observaciones según el formulario.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Para consultar: use los filtros (estado de revisión, búsqueda por número o tipo) y abra el detalle del acta.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">En el detalle, asocie aprendices indicando el identificador del aprendiz cuando la vinculación sea fiable.</div></div>
+    </div>
+
+    <!-- captura15 -->
+    <div class="figure">
+      <img src="img/captura15.png" alt="Detalle de un acta con aprendices asociados"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura15.png</code>
+        <span>Detalle de un acta con aprendices asociados</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 15.</strong> Detalle de acta y aprendices vinculados.</div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Importación de archivo de acta vs. registro de acta</strong>
+      Cargar un archivo de tipo «Acta de certificación» valida y registra la importación en el historial.
+      El registro formal del acta (entidad Act) y la vinculación de aprendices se gestionan desde esta
+      vista de Actas, de acuerdo con las reglas de negocio vigentes.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f7')">← F7 · Detalle del aprendiz</button>
+      <button class="nav-btn primary" onclick="show('f9')">F9 · Indicadores →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F9 · INDICADORES ══════════ -->
+  <section id="sec-f9" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F9</span>
+      <h2>Indicadores de certificación</h2>
+      <p>Consulte el avance del proceso a partir de los datos consolidados.</p>
+    </div>
+
+    <p>
+      La vista <strong>Indicadores</strong> consolida la información importada para mostrar el avance de
+      certificación: cantidades, porcentajes, desgloses por período y, cuando aplica, exclusiones de
+      registros fuera del período o afectados por conflictos no resueltos.
+    </p>
+
+    <!-- captura16 -->
+    <div class="figure">
+      <img src="img/captura16.png" alt="Vista de indicadores de certificación"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura16.png</code>
+        <span>Vista de indicadores: resumen de avance y métricas principales</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 16.</strong> Panel de indicadores de certificación.</div>
+    </div>
+
+    <h3>Qué suele mostrar esta vista</h3>
+    <ul>
+      <li>Totales y avance de formación titulada y complementaria (según las fuentes cargadas).</li>
+      <li>Certificados por mes u otros desgloses temporales.</li>
+      <li>Relación con actas del período.</li>
+      <li>Indicadores de causas o requisitos pendientes (cuando hay datos de la hoja PENDIENTES).</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Dependencia de los datos cargados</strong>
+      Los indicadores se calculan a partir de lo que usted ha importado y de las reglas de negocio
+      (período, conflictos, niveles). Si falta el consolidado ACTAS 2026 o el DF14A actualizado,
+      las cifras pueden estar incompletas. Vuelva a la vista Cargar información para actualizar.
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Informe de gestión</strong>
+      La generación del informe formal de gestión administrativa (documento institucional) se documentará
+      en una actualización de este manual cuando la funcionalidad esté completa y validada.
+    </div>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f8')">← F8 · Actas</button>
+      <button class="nav-btn primary" onclick="show('portada')">Volver a la portada →</button>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    const sec = document.getElementById('sec-' + id);
+    if (sec) {
+      sec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // activar link del sidebar
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const onclick = link.getAttribute('onclick') || '';
+      if (onclick.includes("'" + id + "'") || onclick.includes('"' + id + '"')) {
+        link.classList.add('active');
+      }
+    });
+    // cerrar sidebar en móvil
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (sidebar) sidebar.classList.remove('open');
+    if (overlay) overlay.classList.remove('visible');
+  }
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('visible');
+  }
+</script>
+</body>
+</html>
