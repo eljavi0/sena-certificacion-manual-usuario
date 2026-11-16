@@ -84,6 +84,9 @@
     <a class="nav-link" onclick="show('f9')">
       <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></span> F9 · Indicadores
     </a>
+    <a class="nav-link" onclick="show('f10')">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span> F10 · Informe de gestión
+    </a>
   </div>
 </nav>
 
@@ -128,6 +131,7 @@
       <button class="cover-toc-btn" onclick="show('f7')"><span class="ctn">F7</span> Detalle del aprendiz</button>
       <button class="cover-toc-btn" onclick="show('f8')"><span class="ctn">F8</span> Gestión de actas</button>
       <button class="cover-toc-btn" onclick="show('f9')"><span class="ctn">F9</span> Indicadores</button>
+      <button class="cover-toc-btn" onclick="show('f10')"><span class="ctn">F10</span> Informe de gestión</button>
     </div>
   </section>
 
@@ -157,12 +161,9 @@
         <tr><td>F7</td><td><a onclick="show('f7')">Detalle del aprendiz y requisitos</a></td></tr>
         <tr><td>F8</td><td><a onclick="show('f8')">Gestión de actas</a></td></tr>
         <tr><td>F9</td><td><a onclick="show('f9')">Indicadores de certificación</a></td></tr>
+        <tr><td>F10</td><td><a onclick="show('f10')">Informe de gestión administrativa</a></td></tr>
       </tbody>
     </table>
-    <div class="callout callout-info">
-      <strong>Nota sobre el Informe de gestión</strong>
-      La funcionalidad de generación del Informe de gestión administrativa se documentará en una versión posterior de este manual, una vez esté completada y validada.
-    </div>
   </section>
 
   <!-- ══════════ TABLA DE ILUSTRACIONES ══════════ -->
@@ -193,13 +194,17 @@
         <tr><td><code>img/captura14.png</code></td><td>Listado de actas</td><td>F8</td></tr>
         <tr><td><code>img/captura15.png</code></td><td>Detalle de un acta con aprendices asociados</td><td>F8</td></tr>
         <tr><td><code>img/captura16.png</code></td><td>Vista de indicadores (resumen de avance / métricas principales)</td><td>F9</td></tr>
+        <tr><td><code>img/captura17.png</code></td><td>Vista Informe de gestión: selector de año/trimestre y pestañas</td><td>F10</td></tr>
+        <tr><td><code>img/captura18.png</code></td><td>Pestaña Estrategias / actividades (editores de texto y contexto de cifras)</td><td>F10</td></tr>
+        <tr><td><code>img/captura19.png</code></td><td>Pestaña Anexos (formulario de carga e listado ordenable)</td><td>F10</td></tr>
+        <tr><td><code>img/captura20.png</code></td><td>Pestaña Exportar: modo de cálculo y botón Generar DOCX</td><td>F10</td></tr>
       </tbody>
     </table>
     <div class="callout callout-warning">
       <strong>Cómo completar las capturas</strong>
       1. Cree la carpeta <code>img/</code> junto a este <code>index.html</code>.<br>
       2. Tome las capturas de la aplicación en el orden indicado.<br>
-      3. Guárdelas exactamente con los nombres <code>captura01.png</code> … <code>captura16.png</code> (PNG recomendado).<br>
+      3. Guárdelas exactamente con los nombres <code>captura01.png</code> … <code>captura20.png</code> (PNG recomendado).<br>
       4. Al abrir el manual en el navegador, las imágenes aparecerán automáticamente en su lugar.
     </div>
   </section>
@@ -380,7 +385,7 @@
       <li><strong>Aprendices:</strong> listado, búsqueda, filtros y ficha de detalle.</li>
       <li><strong>Actas:</strong> registro, consulta y vinculación de aprendices a actas oficiales.</li>
       <li><strong>Indicadores:</strong> avance de certificación, métricas por período y desgloses.</li>
-      <li><strong>Informe de gestión:</strong> (se documentará en una versión posterior de este manual).</li>
+      <li><strong>Informe de gestión:</strong> redacción de estrategias, anexos y generación del DOCX oficial (ver F10).</li>
     </ul>
 
     <div class="callout callout-info">
@@ -865,14 +870,177 @@
       las cifras pueden estar incompletas. Vuelva a la vista Cargar información para actualizar.
     </div>
 
-    <div class="callout callout-warning">
-      <strong>Informe de gestión</strong>
-      La generación del informe formal de gestión administrativa (documento institucional) se documentará
-      en una actualización de este manual cuando la funcionalidad esté completa y validada.
+    <div class="callout callout-info">
+      <strong>Relación con el Informe de gestión</strong>
+      Desde Indicadores puede exportar reportes operativos (PDF, XLSX, CSV) con el dataset consolidado.
+      El <strong>Informe de gestión administrativa</strong> (DOCX institucional) se genera en la vista dedicada documentada en F10.
     </div>
 
     <div class="section-footer">
       <button class="nav-btn" onclick="show('f8')">← F8 · Actas</button>
+      <button class="nav-btn primary" onclick="show('f10')">F10 · Informe de gestión →</button>
+    </div>
+  </section>
+
+  <!-- ══════════ F10 · INFORME DE GESTIÓN ══════════ -->
+  <section id="sec-f10" class="section">
+    <div class="page-header">
+      <span class="func-badge">Funcionalidad F10</span>
+      <h2>Informe de gestión administrativa</h2>
+      <p>Redacte estrategias por trimestre, adjunte anexos y genere el DOCX oficial con las cifras del consolidado.</p>
+    </div>
+
+    <p>
+      La vista <strong>Informe de gestión</strong> permite elaborar el documento institucional de la dependencia
+      de Administración Educativa. Combina:
+    </p>
+    <ul>
+      <li><strong>Textos narrativos</strong> (estrategias o actividades) que usted redacta por año y trimestre.</li>
+      <li><strong>Cifras del consolidado</strong> ACTAS 2026 ya importado (metas, ejecución, avance).</li>
+      <li><strong>Anexos con imágenes</strong> (evidencias) ordenables, que se insertan en la sección de anexos del DOCX.</li>
+    </ul>
+
+    <div class="figure">
+      <img src="img/captura17.png" alt="Vista Informe de gestión con año, trimestre y pestañas"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura17.png</code>
+        <span>Vista Informe de gestión: selector de año/trimestre y pestañas</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 17.</strong> Pantalla principal del Informe de gestión administrativa.</div>
+    </div>
+
+    <h3>1. Elegir el período</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Abra <strong>Informe de gestión</strong> en la barra lateral.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Indique el <strong>año</strong> (por ejemplo 2026).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Seleccione el <strong>trimestre</strong>: T1, T2, T3 o T4.</div></div>
+    </div>
+    <div class="callout callout-info">
+      <strong>Textos vs. cifras</strong>
+      Los textos de estrategias y los anexos se guardan por <em>año + trimestre</em>.
+      Al exportar, el <em>modo de cálculo</em> (acumulado o solo el trimestre) cambia únicamente las cifras del consolidado, no los textos.
+    </div>
+
+    <h3>2. Pestaña «Estrategia o Actividades llevadas a cabo»</h3>
+    <p>
+      Aquí completa las secciones narrativas del informe (por ejemplo 3.1.1, 3.1.2, 3.1.3…).
+      Cada bloque muestra un <strong>contexto de cifras</strong> (meta, ejecución, avance) tomado del consolidado
+      y un editor de texto con formato básico (negrita, cursiva, listas).
+    </p>
+
+    <div class="figure">
+      <img src="img/captura18.png" alt="Pestaña de estrategias con editores de texto"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura18.png</code>
+        <span>Pestaña Estrategias / actividades con editores y contexto de cifras</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 18.</strong> Redacción de estrategias por sección del informe.</div>
+    </div>
+
+    <h4>Pasos para redactar estrategias</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Seleccione año y trimestre.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Expanda la sección que desea completar (acordeón 3.1.x).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Revise el contexto de cifras (meta, ejecución, avance) para orientar la narrativa.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Escriba la estrategia o las actividades en el editor. Use negrita, cursiva o viñetas si lo necesita.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Guarde los cambios (la interfaz puede guardar automáticamente; use Deshacer si necesita restaurar el estado anterior).</div></div>
+    </div>
+    <div class="callout callout-warning">
+      <strong>Secciones vacías</strong>
+      Si una sección no tiene texto, el DOCX conservará el <em>placeholder institucional</em>
+      (por ejemplo «Pendiente de registro por la dependencia»). No se inventan actividades.
+    </div>
+
+    <h3>3. Pestaña «Anexos»</h3>
+    <p>
+      Los anexos permiten incluir evidencias visuales (capturas, listados, actas escaneadas, etc.)
+      en la sección de anexos del informe. Cada anexo tiene título, descripción opcional e imágenes.
+    </p>
+
+    <div class="figure">
+      <img src="img/captura19.png" alt="Pestaña Anexos del informe de gestión"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura19.png</code>
+        <span>Pestaña Anexos: formulario de carga y listado ordenable</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 19.</strong> Gestión de anexos del periodo.</div>
+    </div>
+
+    <h4>Pasos para agregar un anexo</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">En la pestaña <strong>Anexos</strong>, indique un <strong>título</strong> (no escriba «ANEXO 1»: el sistema numera al exportar).</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Opcional: agregue una <strong>descripción</strong> o contexto en el editor.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Cargue una o varias imágenes (PNG, JPEG o WebP) arrastrándolas o con «examinar».</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Pulse <strong>Subir anexo</strong>.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Reordene las tarjetas arrastrándolas: el orden define ANEXO 1, 2, 3… en el DOCX.</div></div>
+    </div>
+    <div class="callout callout-info">
+      <strong>Sin anexos también se puede exportar</strong>
+      Si no hay anexos para el trimestre, el informe se genera igual; solo omitirá o dejará vacía esa parte según la plantilla.
+    </div>
+
+    <h3>4. Pestaña «Exportar»</h3>
+    <p>
+      Aquí genera el archivo Word (DOCX) del informe oficial. Antes de descargar, elija cómo se calculan las cifras.
+    </p>
+
+    <div class="figure">
+      <img src="img/captura20.png" alt="Pestaña Exportar del informe de gestión"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-placeholder" style="display:none">
+        <span>Espacio reservado para captura</span>
+        <code>img/captura20.png</code>
+        <span>Pestaña Exportar: modo de cálculo y botón Generar DOCX</span>
+      </div>
+      <div class="figure-caption"><strong>Figura 20.</strong> Exportación del Informe de gestión en DOCX.</div>
+    </div>
+
+    <h4>Modos de cálculo de cifras</h4>
+    <ul>
+      <li><strong>Acumulado hasta el trimestre</strong> (recomendado para el informe oficial): desde el 1 de enero hasta el último día del trimestre elegido (ej. T3 → 1 ene – 30 sep).</li>
+      <li><strong>Solo el trimestre</strong>: únicamente los tres meses de ese trimestre (útil para análisis del flujo del periodo).</li>
+    </ul>
+
+    <h4>Pasos para generar el DOCX</h4>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Verifique año y trimestre en la cabecera.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Confirme que las estrategias y anexos del periodo están listos (el resumen de la pestaña Exportar indica qué hay cargado).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Elija el <strong>modo de cálculo</strong>: acumulado o solo trimestre.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Pulse <strong>Generar DOCX del informe</strong> y descargue el archivo.</div></div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>Fuente de las cifras</strong>
+      Las cifras salen del <strong>consolidado ACTAS 2026</strong> (u homologado) importado en la aplicación.
+      Si no hay lote vigente o faltan hojas, el informe puede generarse con datos incompletos o avisar la limitación.
+      Actualice antes la vista <strong>Cargar información</strong> con el Excel institucional actualizado.
+    </div>
+
+    <div class="callout callout-success">
+      <strong>Buenas prácticas</strong>
+      <ul style="margin:0.4rem 0 0 1.1rem">
+        <li>Redacte en lenguaje institucional; no mencione el nombre de la aplicación como fuente de los datos en el cuerpo del informe.</li>
+        <li>Revise conflictos CERTIFICADOS/PENDIENTES antes de exportar: afectan la ejecución de titulada.</li>
+        <li>Conserve el DOCX generado junto con el consolidado del mismo corte para auditoría.</li>
+      </ul>
+    </div>
+
+    <h3>Exportes operativos desde Indicadores (complemento)</h3>
+    <p>
+      Además del DOCX de gestión, desde la vista <strong>Indicadores</strong> puede usar
+      <strong>Exportar informe</strong> para descargar reportes operativos en PDF, XLSX o CSV
+      (resumen ejecutivo, categorías, certificados por mes, causas, actas, consolidado, etc.).
+      Esos archivos no sustituyen el informe institucional Word; sirven para análisis y seguimiento interno.
+    </p>
+
+    <div class="section-footer">
+      <button class="nav-btn" onclick="show('f9')">← F9 · Indicadores</button>
       <button class="nav-btn primary" onclick="show('portada')">Volver a la portada →</button>
     </div>
   </section>
