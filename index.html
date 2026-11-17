@@ -31,9 +31,6 @@
     <a class="nav-link" onclick="show('toc')">
       <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></span> Tabla de contenidos
     </a>
-    <a class="nav-link" onclick="show('ilustraciones')">
-      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></span> Tabla de ilustraciones
-    </a>
   </div>
 
   <div class="nav-section">
@@ -166,48 +163,6 @@
     </table>
   </section>
 
-  <!-- ══════════ TABLA DE ILUSTRACIONES ══════════ -->
-  <section id="sec-ilustraciones" class="section">
-    <div class="page-header">
-      <p class="eyebrow">Referencia visual</p>
-      <h2>Tabla de ilustraciones</h2>
-      <p>Lista ordenada de las capturas de pantalla que debe tomar y colocar en la carpeta <code>img/</code>.</p>
-    </div>
-    <table class="illust-table">
-      <thead>
-        <tr><th style="width:18%">Archivo</th><th>Descripción / qué capturar</th><th style="width:22%">Sección</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>img/captura01.png</code></td><td>Barra lateral (rail) de navegación completa, con las opciones visibles</td><td>F1</td></tr>
-        <tr><td><code>img/captura02.png</code></td><td>Vista principal «Cargar información» (pantalla inicial vacía o lista para importar)</td><td>F2</td></tr>
-        <tr><td><code>img/captura03.png</code></td><td>Selección de tipo de fuente / zona de carga de archivo (DF14A, Acta, Requisitos, ACTAS 2026…)</td><td>F2</td></tr>
-        <tr><td><code>img/captura04.png</code></td><td>Vista previa de importación (resumen de registros, advertencias y botones Confirmar / Cancelar)</td><td>F3</td></tr>
-        <tr><td><code>img/captura05.png</code></td><td>Banner o mensaje de importación completada con éxito</td><td>F3</td></tr>
-        <tr><td><code>img/captura06.png</code></td><td>Vista previa mostrando conflictos o advertencias de coherencia</td><td>F3 / F4</td></tr>
-        <tr><td><code>img/captura07.png</code></td><td>Panel o modal de resolución de conflictos (CERTIFICADOS vs PENDIENTES)</td><td>F4</td></tr>
-        <tr><td><code>img/captura08.png</code></td><td>Botón y panel de Google Sheets (campo de URL y botón Sincronizar)</td><td>F5</td></tr>
-        <tr><td><code>img/captura09.png</code></td><td>Estado de sincronización de Google Sheets (éxito, sin cambios o conflicto pendiente)</td><td>F5</td></tr>
-        <tr><td><code>img/captura10.png</code></td><td>Listado de aprendices (tabla con columnas y paginación)</td><td>F6</td></tr>
-        <tr><td><code>img/captura11.png</code></td><td>Filtros activos: buscador, selector de estado y chips de estado</td><td>F6</td></tr>
-        <tr><td><code>img/captura12.png</code></td><td>Ficha / detalle de un aprendiz (datos básicos)</td><td>F7</td></tr>
-        <tr><td><code>img/captura13.png</code></td><td>Sección de requisitos del aprendiz (pendientes o historial)</td><td>F7</td></tr>
-        <tr><td><code>img/captura14.png</code></td><td>Listado de actas</td><td>F8</td></tr>
-        <tr><td><code>img/captura15.png</code></td><td>Detalle de un acta con aprendices asociados</td><td>F8</td></tr>
-        <tr><td><code>img/captura16.png</code></td><td>Vista de indicadores (resumen de avance / métricas principales)</td><td>F9</td></tr>
-        <tr><td><code>img/captura17.png</code></td><td>Vista Informe de gestión: selector de año/trimestre y pestañas</td><td>F10</td></tr>
-        <tr><td><code>img/captura18.png</code></td><td>Pestaña Estrategias / actividades (editores de texto y contexto de cifras)</td><td>F10</td></tr>
-        <tr><td><code>img/captura19.png</code></td><td>Pestaña Anexos (formulario de carga e listado ordenable)</td><td>F10</td></tr>
-        <tr><td><code>img/captura20.png</code></td><td>Pestaña Exportar: modo de cálculo y botón Generar DOCX</td><td>F10</td></tr>
-      </tbody>
-    </table>
-    <div class="callout callout-warning">
-      <strong>Cómo completar las capturas</strong>
-      1. Cree la carpeta <code>img/</code> junto a este <code>index.html</code>.<br>
-      2. Tome las capturas de la aplicación en el orden indicado.<br>
-      3. Guárdelas exactamente con los nombres <code>captura01.png</code> … <code>captura20.png</code> (PNG recomendado).<br>
-      4. Al abrir el manual en el navegador, las imágenes aparecerán automáticamente en su lugar.
-    </div>
-  </section>
 
   <!-- ══════════ INTRODUCCIÓN ══════════ -->
   <section id="sec-intro" class="section">
@@ -887,17 +842,17 @@
     <div class="page-header">
       <span class="func-badge">Funcionalidad F10</span>
       <h2>Informe de gestión administrativa</h2>
-      <p>Redacte estrategias por trimestre, adjunte anexos y genere el DOCX oficial con las cifras del consolidado.</p>
+      <p>Redacte estrategias y anexos por trimestre, guárdelos en la base de datos y genere el DOCX oficial.</p>
     </div>
 
     <p>
-      La vista <strong>Informe de gestión</strong> permite elaborar el documento institucional de la dependencia
-      de Administración Educativa. Combina:
+      La vista <strong>Informe de gestión</strong> elabora el documento institucional (Word/DOCX) de la dependencia.
+      En esta pantalla se trabajan juntos:
     </p>
     <ul>
-      <li><strong>Textos narrativos</strong> (estrategias o actividades) que usted redacta por año y trimestre.</li>
-      <li><strong>Cifras del consolidado</strong> ACTAS 2026 ya importado (metas, ejecución, avance).</li>
-      <li><strong>Anexos con imágenes</strong> (evidencias) ordenables, que se insertan en la sección de anexos del DOCX.</li>
+      <li><strong>Estrategias o actividades</strong> llevadas a cabo (textos del informe).</li>
+      <li><strong>Anexos</strong> con imágenes de evidencia.</li>
+      <li><strong>Exportación</strong> del informe en DOCX, con las cifras del consolidado ACTAS según el período elegido.</li>
     </ul>
 
     <div class="figure">
@@ -911,22 +866,40 @@
       <div class="figure-caption"><strong>Figura 17.</strong> Pantalla principal del Informe de gestión administrativa.</div>
     </div>
 
-    <h3>1. Elegir el período</h3>
+    <h3>1. Año y trimestre (parte superior derecha)</h3>
+    <p>
+      En la <strong>parte superior derecha</strong> de la pantalla verá los selectores de <strong>Año</strong> y <strong>Trimestre</strong>
+      (Trimestre I, II, III o IV). Todo lo que escriba o suba en Estrategias y en Anexos queda asociado a esa combinación año + trimestre
+      y se guarda en la <strong>base de datos</strong> de la aplicación.
+    </p>
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-text">Abra <strong>Informe de gestión</strong> en la barra lateral.</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-text">Indique el <strong>año</strong> (por ejemplo 2026).</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-text">Seleccione el <strong>trimestre</strong>: T1, T2, T3 o T4.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Confirme el <strong>año</strong> de trabajo (por ejemplo 2026).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Seleccione el <strong>trimestre</strong> en el que está trabajando antes de redactar o subir anexos.</div></div>
     </div>
+
+    <div class="callout callout-warning">
+      <strong>Importante: el trimestre debe coincidir con el período en el que trabaja</strong>
+      Si guarda estrategias y anexos con el selector en <strong>Trimestre III</strong> y luego genera el informe,
+      el documento se prepara para ese tercer trimestre (textos y anexos del T3).
+      Si el equipo ya está trabajando el <strong>cuarto trimestre</strong>, debe cambiar el selector a
+      <strong>Trimestre IV</strong> antes de cargar estrategias, anexos o generar el informe de ese corte.
+      De lo contrario podría editar o exportar el contenido del trimestre equivocado.
+    </div>
+
     <div class="callout callout-info">
-      <strong>Textos vs. cifras</strong>
-      Los textos de estrategias y los anexos se guardan por <em>año + trimestre</em>.
-      Al exportar, el <em>modo de cálculo</em> (acumulado o solo el trimestre) cambia únicamente las cifras del consolidado, no los textos.
+      <strong>Ejemplo práctico</strong>
+      <ul style="margin:0.4rem 0 0 1.1rem">
+        <li>Trabajo del T3 → deje Año 2026 y Trimestre III → escriba estrategias, suba anexos y genere el informe del tercer trimestre.</li>
+        <li>Cuando inicie el T4 → cambie a <strong>Trimestre IV</strong> → ahí registre las estrategias y anexos del cuarto trimestre y genere el informe correspondiente.</li>
+      </ul>
+      Los textos y anexos de cada trimestre se conservan por separado en la base de datos; no se mezclan al cambiar el selector.
     </div>
 
     <h3>2. Pestaña «Estrategia o Actividades llevadas a cabo»</h3>
     <p>
-      Aquí completa las secciones narrativas del informe (por ejemplo 3.1.1, 3.1.2, 3.1.3…).
-      Cada bloque muestra un <strong>contexto de cifras</strong> (meta, ejecución, avance) tomado del consolidado
+      Complete las secciones narrativas del informe (por ejemplo 3.1.1, 3.1.2, 3.1.3…).
+      Cada bloque puede mostrar un <strong>contexto de cifras</strong> (meta, ejecución, avance) tomado del consolidado
       y un editor de texto con formato básico (negrita, cursiva, listas).
     </p>
 
@@ -941,24 +914,30 @@
       <div class="figure-caption"><strong>Figura 18.</strong> Redacción de estrategias por sección del informe.</div>
     </div>
 
-    <h4>Pasos para redactar estrategias</h4>
+    <h4>Pasos para redactar y guardar</h4>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-text">Seleccione año y trimestre.</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-text">Expanda la sección que desea completar (acordeón 3.1.x).</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-text">Revise el contexto de cifras (meta, ejecución, avance) para orientar la narrativa.</div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-text">Escriba la estrategia o las actividades en el editor. Use negrita, cursiva o viñetas si lo necesita.</div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-text">Guarde los cambios (la interfaz puede guardar automáticamente; use Deshacer si necesita restaurar el estado anterior).</div></div>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Verifique que el <strong>año y el trimestre</strong> de la esquina superior derecha sean los correctos.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Expanda la sección que desea completar.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Escriba la estrategia o las actividades en el editor.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Pulse Guardar</strong> en la pestaña de estrategias. Si no guarda, el texto puede perderse al salir o al cambiar de trimestre.</div></div>
     </div>
-    <div class="callout callout-warning">
-      <strong>Secciones vacías</strong>
-      Si una sección no tiene texto, el DOCX conservará el <em>placeholder institucional</em>
+    <div class="callout callout-danger">
+      <strong>No olvide guardar</strong>
+      Después de redactar o modificar las estrategias, use el botón <strong>Guardar</strong>.
+      Así el contenido queda registrado en la base de datos ligado al año y trimestre seleccionados.
+      Si solo escribe y no guarda, puede perder el trabajo.
+    </div>
+    <div class="callout callout-info">
+      <strong>Secciones vacías al exportar</strong>
+      Si una sección no tiene texto guardado, el DOCX suele conservar el placeholder institucional
       (por ejemplo «Pendiente de registro por la dependencia»). No se inventan actividades.
     </div>
 
     <h3>3. Pestaña «Anexos»</h3>
     <p>
-      Los anexos permiten incluir evidencias visuales (capturas, listados, actas escaneadas, etc.)
-      en la sección de anexos del informe. Cada anexo tiene título, descripción opcional e imágenes.
+      En la misma vista del Informe de gestión, la pestaña <strong>Anexos</strong> permite incluir evidencias
+      (imágenes) que irán en la sección de anexos del DOCX. También se guardan en la base de datos
+      asociadas al año y trimestre seleccionados en la parte superior derecha.
     </p>
 
     <div class="figure">
@@ -974,20 +953,21 @@
 
     <h4>Pasos para agregar un anexo</h4>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-text">En la pestaña <strong>Anexos</strong>, indique un <strong>título</strong> (no escriba «ANEXO 1»: el sistema numera al exportar).</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-text">Opcional: agregue una <strong>descripción</strong> o contexto en el editor.</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-text">Cargue una o varias imágenes (PNG, JPEG o WebP) arrastrándolas o con «examinar».</div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-text">Pulse <strong>Subir anexo</strong>.</div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-text">Reordene las tarjetas arrastrándolas: el orden define ANEXO 1, 2, 3… en el DOCX.</div></div>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Confirme de nuevo el <strong>trimestre</strong> correcto (por ejemplo Trimestre IV si está en el cuarto trimestre).</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Indique un <strong>título</strong> (no escriba «ANEXO 1»: el sistema numera al exportar).</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Opcional: agregue una descripción o contexto.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Cargue una o varias imágenes (PNG, JPEG o WebP) y pulse <strong>Subir anexo</strong>.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Si hay varios anexos, reordene las tarjetas arrastrándolas: ese orden define ANEXO 1, 2, 3… en el documento.</div></div>
     </div>
     <div class="callout callout-info">
       <strong>Sin anexos también se puede exportar</strong>
-      Si no hay anexos para el trimestre, el informe se genera igual; solo omitirá o dejará vacía esa parte según la plantilla.
+      Puede generar el DOCX aunque no haya anexos para ese trimestre; la plantilla omitirá o dejará vacía esa parte según corresponda.
     </div>
 
-    <h3>4. Pestaña «Exportar»</h3>
+    <h3>4. Generar el informe (pestaña «Exportar»)</h3>
     <p>
-      Aquí genera el archivo Word (DOCX) del informe oficial. Antes de descargar, elija cómo se calculan las cifras.
+      Cuando las estrategias estén <strong>guardadas</strong> y los anexos del trimestre listos, abra la pestaña
+      <strong>Exportar</strong> para descargar el Word del informe de gestión.
     </p>
 
     <div class="figure">
@@ -1001,33 +981,44 @@
       <div class="figure-caption"><strong>Figura 20.</strong> Exportación del Informe de gestión en DOCX.</div>
     </div>
 
-    <h4>Modos de cálculo de cifras</h4>
+    <h4>Dos formas de generar el informe (modo de cálculo)</h4>
+    <p>Al generar el DOCX puede elegir cómo se calculan las <strong>cifras</strong> del consolidado. Los textos y anexos siguen siendo los del año y trimestre seleccionados arriba.</p>
     <ul>
-      <li><strong>Acumulado hasta el trimestre</strong> (recomendado para el informe oficial): desde el 1 de enero hasta el último día del trimestre elegido (ej. T3 → 1 ene – 30 sep).</li>
-      <li><strong>Solo el trimestre</strong>: únicamente los tres meses de ese trimestre (útil para análisis del flujo del periodo).</li>
+      <li>
+        <strong>Acumulado hasta el trimestre</strong> (recomendado para el informe oficial):
+        muestra lo realizado desde el inicio del año hasta el trimestre elegido.
+        Ejemplo: si el selector está en <strong>Trimestre IV</strong> y elige acumulado, el informe refleja
+        el trabajo del primero, segundo, tercero y cuarto trimestre (de enero a diciembre).
+      </li>
+      <li>
+        <strong>Solo el trimestre</strong>:
+        muestra únicamente lo correspondiente a ese trimestre.
+        Ejemplo: con <strong>Trimestre IV</strong> y modo «solo el trimestre», las cifras corresponden
+        solo a octubre–diciembre, no a todo el año.
+      </li>
     </ul>
 
     <h4>Pasos para generar el DOCX</h4>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-text">Verifique año y trimestre en la cabecera.</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-text">Confirme que las estrategias y anexos del periodo están listos (el resumen de la pestaña Exportar indica qué hay cargado).</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-text">Elija el <strong>modo de cálculo</strong>: acumulado o solo trimestre.</div></div>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Verifique en la esquina superior derecha el <strong>año</strong> y el <strong>trimestre</strong> (por ejemplo Trimestre IV si trabaja el cuarto trimestre).</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Confirme que ya pulsó <strong>Guardar</strong> en estrategias y que los anexos del mismo período están cargados.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">En Exportar, elija el modo: <strong>Acumulado hasta el trimestre</strong> o <strong>Solo el trimestre</strong>.</div></div>
       <div class="step"><div class="step-num">4</div><div class="step-text">Pulse <strong>Generar DOCX del informe</strong> y descargue el archivo.</div></div>
     </div>
 
     <div class="callout callout-warning">
       <strong>Fuente de las cifras</strong>
       Las cifras salen del <strong>consolidado ACTAS 2026</strong> (u homologado) importado en la aplicación.
-      Si no hay lote vigente o faltan hojas, el informe puede generarse con datos incompletos o avisar la limitación.
-      Actualice antes la vista <strong>Cargar información</strong> con el Excel institucional actualizado.
+      Si no hay lote vigente, actualice antes desde <strong>Cargar información</strong> con el Excel institucional del corte.
     </div>
 
     <div class="callout callout-success">
-      <strong>Buenas prácticas</strong>
+      <strong>Resumen rápido</strong>
       <ul style="margin:0.4rem 0 0 1.1rem">
-        <li>Redacte en lenguaje institucional; no mencione el nombre de la aplicación como fuente de los datos en el cuerpo del informe.</li>
-        <li>Revise conflictos CERTIFICADOS/PENDIENTES antes de exportar: afectan la ejecución de titulada.</li>
-        <li>Conserve el DOCX generado junto con el consolidado del mismo corte para auditoría.</li>
+        <li>Año y trimestre arriba a la derecha definen dónde se guardan estrategias y anexos.</li>
+        <li>Al trabajar el cuarto trimestre, el selector debe decir <strong>Trimestre IV</strong>.</li>
+        <li>En estrategias, siempre pulse <strong>Guardar</strong>.</li>
+        <li>Al exportar: <em>acumulado</em> = desde el inicio del año hasta ese trimestre; <em>solo trimestre</em> = únicamente ese trimestre.</li>
       </ul>
     </div>
 
